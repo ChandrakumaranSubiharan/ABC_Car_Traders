@@ -33,8 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,144 +58,156 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin_Forms\FrmCars.cs">
+    <Compile Include="ExportToPDF.cs" />
+    <Compile Include="Forms\Admin_Forms\FrmCars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Forms\FrmCars.Designer.cs">
+    <Compile Include="Forms\Admin_Forms\FrmCars.Designer.cs">
       <DependentUpon>FrmCars.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Forms\FrmCarParts.cs">
+    <Compile Include="Forms\Admin_Forms\FrmCarParts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Forms\FrmCarParts.Designer.cs">
+    <Compile Include="Forms\Admin_Forms\FrmCarParts.Designer.cs">
       <DependentUpon>FrmCarParts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Forms\FrmClient.cs">
+    <Compile Include="Forms\Admin_Forms\FrmClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Forms\FrmClient.Designer.cs">
+    <Compile Include="Forms\Admin_Forms\FrmClient.Designer.cs">
       <DependentUpon>FrmClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Forms\FrmMainMenuAdmin.cs">
+    <Compile Include="Forms\Admin_Forms\FrmMainMenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Forms\FrmMainMenuAdmin.Designer.cs">
+    <Compile Include="Forms\Admin_Forms\FrmMainMenuAdmin.Designer.cs">
       <DependentUpon>FrmMainMenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Forms\FrmOrders.cs">
+    <Compile Include="Forms\Admin_Forms\FrmOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Forms\FrmOrders.Designer.cs">
+    <Compile Include="Forms\Admin_Forms\FrmOrders.Designer.cs">
       <DependentUpon>FrmOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Forms\FrmSales.cs">
+    <Compile Include="Forms\Admin_Forms\FrmAccSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Forms\FrmSales.Designer.cs">
-      <DependentUpon>FrmSales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Forms\FrmAccSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin_Forms\FrmAccSettings.Designer.cs">
+    <Compile Include="Forms\Admin_Forms\FrmAccSettings.Designer.cs">
       <DependentUpon>FrmAccSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Forms\FrmAccSettingsClient.cs">
+    <Compile Include="App.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Forms\FrmAccSettingsClient.Designer.cs">
+    <Compile Include="App.Designer.cs">
+      <DependentUpon>App.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client_Forms\FrmAccSettingsClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client_Forms\FrmAccSettingsClient.Designer.cs">
       <DependentUpon>FrmAccSettingsClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Forms\FrmCarPartsClient.cs">
+    <Compile Include="Forms\Client_Forms\FrmCarPartsClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Forms\FrmCarPartsClient.Designer.cs">
+    <Compile Include="Forms\Client_Forms\FrmCarPartsClient.Designer.cs">
       <DependentUpon>FrmCarPartsClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Forms\FrmCarsClient.cs">
+    <Compile Include="Forms\Client_Forms\FrmCarsClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Forms\FrmCarsClient.Designer.cs">
+    <Compile Include="Forms\Client_Forms\FrmCarsClient.Designer.cs">
       <DependentUpon>FrmCarsClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Forms\FrmCartClient.cs">
+    <Compile Include="Forms\Client_Forms\FrmCartClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Forms\FrmCartClient.Designer.cs">
+    <Compile Include="Forms\Client_Forms\FrmCartClient.Designer.cs">
       <DependentUpon>FrmCartClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Forms\FrmMainMenuClient.cs">
+    <Compile Include="Forms\Client_Forms\FrmMainMenuClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Forms\FrmMainMenuClient.Designer.cs">
+    <Compile Include="Forms\Client_Forms\FrmMainMenuClient.Designer.cs">
       <DependentUpon>FrmMainMenuClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="Forms\Client_Forms\FrmOrdersClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="Forms\Client_Forms\FrmOrdersClient.Designer.cs">
+      <DependentUpon>FrmOrdersClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegister.cs">
+    <Compile Include="Forms\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegister.Designer.cs">
+    <Compile Include="Forms\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin_Forms\FrmCars.resx">
+    <Compile Include="Login_Static.cs" />
+    <EmbeddedResource Include="Forms\Admin_Forms\FrmCars.resx">
       <DependentUpon>FrmCars.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Forms\FrmCarParts.resx">
+    <EmbeddedResource Include="Forms\Admin_Forms\FrmCarParts.resx">
       <DependentUpon>FrmCarParts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Forms\FrmClient.resx">
+    <EmbeddedResource Include="Forms\Admin_Forms\FrmClient.resx">
       <DependentUpon>FrmClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Forms\FrmMainMenuAdmin.resx">
+    <EmbeddedResource Include="Forms\Admin_Forms\FrmMainMenuAdmin.resx">
       <DependentUpon>FrmMainMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Forms\FrmOrders.resx">
+    <EmbeddedResource Include="Forms\Admin_Forms\FrmOrders.resx">
       <DependentUpon>FrmOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Forms\FrmSales.resx">
-      <DependentUpon>FrmSales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Forms\FrmAccSettings.resx">
+    <EmbeddedResource Include="Forms\Admin_Forms\FrmAccSettings.resx">
       <DependentUpon>FrmAccSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Forms\FrmAccSettingsClient.resx">
+    <EmbeddedResource Include="App.resx">
+      <DependentUpon>App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client_Forms\FrmAccSettingsClient.resx">
       <DependentUpon>FrmAccSettingsClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Forms\FrmCarPartsClient.resx">
+    <EmbeddedResource Include="Forms\Client_Forms\FrmCarPartsClient.resx">
       <DependentUpon>FrmCarPartsClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Forms\FrmCarsClient.resx">
+    <EmbeddedResource Include="Forms\Client_Forms\FrmCarsClient.resx">
       <DependentUpon>FrmCarsClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Forms\FrmCartClient.resx">
+    <EmbeddedResource Include="Forms\Client_Forms\FrmCartClient.resx">
       <DependentUpon>FrmCartClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Forms\FrmMainMenuClient.resx">
+    <EmbeddedResource Include="Forms\Client_Forms\FrmMainMenuClient.resx">
       <DependentUpon>FrmMainMenuClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Forms\Client_Forms\FrmOrdersClient.resx">
+      <DependentUpon>FrmOrdersClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegister.resx">
+    <EmbeddedResource Include="Forms\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -346,6 +370,124 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\env.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mailcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cartwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dailyReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonthlyReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClientReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CartReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SparePartReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carreport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lod.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_Img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgLoading.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lodImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lod1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{2874f149-6432-4e6b-ac3b-b821215ce34e}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d54e2777-048d-4318-b323-86e84b85914f}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

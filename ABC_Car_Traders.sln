@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1758
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC_Car_Traders", "ABC_Car_Traders\ABC_Car_Traders.csproj", "{C65B7BAB-ED4A-4025-8048-F996633A24DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{2874F149-6432-4E6B-AC3B-B821215CE34E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{D54E2777-048D-4318-B323-86E84B85914F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C65B7BAB-ED4A-4025-8048-F996633A24DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C65B7BAB-ED4A-4025-8048-F996633A24DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C65B7BAB-ED4A-4025-8048-F996633A24DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2874F149-6432-4E6B-AC3B-B821215CE34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2874F149-6432-4E6B-AC3B-B821215CE34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2874F149-6432-4E6B-AC3B-B821215CE34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2874F149-6432-4E6B-AC3B-B821215CE34E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54E2777-048D-4318-B323-86E84B85914F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54E2777-048D-4318-B323-86E84B85914F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54E2777-048D-4318-B323-86E84B85914F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54E2777-048D-4318-B323-86E84B85914F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

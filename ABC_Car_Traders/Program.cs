@@ -16,7 +16,7 @@ namespace ABC_Car_Traders
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Client_Forms.FrmMainMenuClient());
+            Application.Run(new FrmLogin());
         }
     }
 }

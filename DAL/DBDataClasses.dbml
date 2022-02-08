@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="abc_car_traders" Class="DBDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7HINSPN\SUBIHARAN;Initial Catalog=abc_car_traders;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="abc_car_tradersConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admin" Member="admins">
+    <Type Name="admin">
+      <Column Name="admin_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="admin_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="login_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.login" Member="logins">
+    <Type Name="login">
+      <Column Name="login_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[order]" Member="orders">
+    <Type Name="order">
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="clt_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="order_total_amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="payment_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="date_order_placed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sparepart" Member="spareparts">
+    <Type Name="sparepart">
+      <Column Name="part_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="part_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_menufecturer" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_warrenty" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="part_quentity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="image_path" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date_added" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_updated" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orderDetails" Member="orderDetails">
+    <Type Name="orderDetail">
+      <Column Name="order_Details_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Item_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Item_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Item_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="client_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pricePerItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_qty_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.client" Member="clients">
+    <Type Name="client">
+      <Column Name="clt_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clt_email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="clt_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="clt_mobileNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="clt_registered_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="clt_updated_date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="login_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.car" Member="cars">
+    <Type Name="car">
+      <Column Name="car_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="modelname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fueltype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="availability" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="added_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="image_path" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="updated_date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
